@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<!-- Página de confirmação de estadia 
+  Autor: Adriano
+	Site: Front-end Mentor -->
+
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Hotel booking confirmation page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 0.6875rem; text-align: center; }
+    </style>
+    
+		<link href="_css/fonts.css" rel="stylesheet">
+    <link href="_css/estilo.css" rel="stylesheet">
+    <link href="_css/estilo_desktop.css" media="(min-width: 1440px)" rel="stylesheet">
+  </head>
+	
+	
+  <body>
+
+    <!-- Sidebar starts -->
+    <aside class="container-lateral">
+      <section class="container-lateral__inicio inicio-titulo">
+        <h3 class="inicio-titulo__nome nome fraunces-800"><span class="nome__destaque">Maison</span>Soleil</h3>
+        <img src="assets/images/illustration-sun.svg" alt="" class="inicio-titulo__img">
+				<button type="button" class="container-lateral__btn-menu"><img src="assets/images/icon-menu.svg" id="menu_btn_icon" alt="">
+      </section>
+
+      <hr>
+      
+			<header class="menu-cabecalho" id="menu_cabecalho">
+			  <!-- Guest navigation -->
+        <nav class="menu" id="menu">
+          <a href="#" class="menu__link menu__link--ativo"><img src="assets/images/icon-bed.svg" alt=""> <span>Your stay</span><span class="notificacao" style="font-family: DS-Mono, monospace;">1</span></a>
+          <a href="#" class="menu__link"><img src="assets/images/icon-house.svg" alt=""> <span>The house</span></a>
+          <a href="#" class="menu__link"><img src=" assets/images/icon-pin.svg" alt=""> <span>Around town</span></a>
+          <a href="#" class="menu__link"><img src="assets/images/icon-breakfast-outline.svg" alt=""> <span>Breakfast</span></a>
+          <a href="#" class="menu__link"><img src="assets/images/icon-mail.svg" alt=""> <span>Messages</span></a>
+        </nav>
+
+        <!-- Local weather -->
+				
+        <footer class="rodape-lateral">
+          <section class="cartao-clima">
+            <h6 class="cartao-clima__titulo">Today in Cassis</h6>
+            <span class="cartao-clima__temperatura-ambiente">27°</span>
+            <p class="cartao-clima__descricao">Sunny · light breeze</p>
+          </section>
+			
+          <svg width="100%" height="1" style="display:block;margin:16px 0;opacity: 0.6">
+              <line
+                x1="0"
+                y1="1"
+                x2="100%"
+                y2="1"
+                stroke="var(--neutral-600)"
+                stroke-width="2"
+                stroke-dasharray="3 3"
+              />
+            </svg>
+          <p class="rodape-lateral__texto">Est. 1987</p>
+          <p class="rodape-lateral__texto">Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+          <p class="rodape-lateral__texto">© 2026 Maison Soleil</p>
+        </footer>
+      </header>
+    </aside>
+    <!-- Sidebar ends -->
+
+    <ul class="lista-paginas">
+      <li class="lista-paginas__item">Booking</li>
+      <li class="lista-paginas__item">Confirmed</li> <!-- · -->
+    </ul>
+    
+		<br>
+    <!-- Main content starts -->
+    <main>
+
+      <header class="cabecalho-principal">
+        <h1 class="cabecalho-principal__titulo">Bienvenue, <i><mark>Lucia.</mark></i></h1>
+        
+				<div class="btn-group">
+          <button type="button" class="btn-group__btn">Print receipt</button>
+          <button type="button" class="btn-group__btn">Add to calendar</button>
+				</div>
+      </header>
+        
+		  <!-- Booking cards start -->
+      <!-- Receipt card -->
+			<div class="card-group">
+			  <div class="card-group__item">
+          <article class="cartao-estadia" id="card01">
+            <header class="cartao-estadia__recibo recibo">
+              <h5 class="recibo__titulo titulo">Receipt <span class="titulo__num"><!-- № -->Nº MS-2026<br>0421-AH</span></h5>
+
+              <h6 class="recibo__subtitulo">Your stay</h6>
+						
+            </header>
+							
+						<!-- Trançados -->
+						<svg width="100%" height="1" style="display:block;margin:12px 0;opacity: 0.6">
+              <line
+                x1="0"
+                y1="1"
+                x2="100%"
+                y2="1"
+                stroke="var(--neutral-600)"
+                stroke-width="2"
+                stroke-dasharray="3 3"
+              />
+            </svg>
+
+            <div class="datas-entrada-saida">
+              <section class="info-check">
+                <h6 class="info-check__titulo">Check in</h6>
+                <b class="info-check__dias">25 Apr</b>
+                <small class="info-check__semana-hora">Saturday · 15:00</small>
+              </section>
+              <section class="info-check">
+                <h6 class="info-check__titulo">Check out</h6>
+                <b class="info-check__dias">29 Apr</b>
+                <small class="info-check__semana-hora">Wednesday · 11:00</small>
+              </section>
+            </div>
+							
+						<!-- Trançados -->
+						<svg width="100%" height="1" style="display:block;margin:12px 0;opacity: 0.6">
+              <line
+                x1="0"
+                y1="1"
+                x2="100%"
+                y2="1"
+                stroke="var(--neutral-600)"
+                stroke-width="2"
+                stroke-dasharray="3 3"
+              />
+            </svg>
+					
+            <ul class="servicos">
+              <li class="servicos__items items">Room · La Garrigue × 4 nights <span class="items__valor">€ 620.00</span></li>
+              <li class="servicos__items items">Breakfast × 2 guests <span class="items__valor">€ 96.00</span></li>
+              <li class="servicos__items items servicos--valor">Tourist tax <span class="items__valor">€ 14.40</span></li>
+            </ul>
+					
+            <hr style="height: 1px;background: var(--neutral-600); margin: 20px 0;">
+					
+            <p class="total">Total paid <b class="total__valor-total">€ 730.40</b></p>
+
+            <section class="cod-barras">
+              <p class="cod-barras__metodos">Paid · Wise · GBP</p>
+
+              <!-- Barcode image -->
+							
+              <img src="assets/images/icon-barcode.svg" alt="" class="cod-barras__codigo-scanner">
+            </section>
+          </article>
+			  </div>
+				
+				<div class="sol-hover">
+					<img src="assets/images/illustration-sun.svg" alt="">
+				</div>
+				
+        <!-- Note from host card -->
+			  <div class="card-group__item" id="card_container">
+          <article class="boas-vindas" id="card02">
+						<!-- <hr class="divisa-tracejada"> -->
+						
+						<!-- Trançados -->
+						<svg width="100%" height="1" style="opacity: 0.6">
+              <line
+                x1="0"
+                y1="1"
+                x2="100%"
+                y2="1"
+                stroke="var(--neutral-400)"
+                stroke-width="2"
+                stroke-dasharray="5 4"
+              />
+            </svg>
+						
+            <h3 class="boas-vindas__titulo">Welcome card</h3>
+            <p class="boas-vindas__saudacao">A note from your host, </p>
+						<p class="boas-vindas__nome">Margaux.</p>
+            <p class="boas-vindas__texto">We're so glad you're coming. The shutters will be open,<br class="br-not-mobile"> the lemonade cold, and the cat - Poivre - pretending<br class="br-not-mobile"> not to notice you.</p>
+						
+						<img src="assets/images/icon-sun.svg" class="boas-vindas__sol-img" alt="">
+        
+				    <footer class="boas-vindas__rodape rodape">
+				      <p class="rodape__comodo"><small style="text-transform: uppercase; font-family: DM-Sans, Sans-Serif;">Room</small><br>
+          <span class="rodape__hotel-nome">La Garrigue</span></p>
+				    </footer>
+          </article>
+        </div>
+			</div>
+				<p class="hover-to-fan"><img src="assets/images/icon-sparkle.svg" alt="" style="filter:saturate(120%)"> Hover to Fan <img src="assets/images/icon-sparkle.svg" alt="" style="filter:saturate(120%)"></p>
+      <!-- Booking cards end -->
+
+      <!-- Guest info row starts -->
+			<div class="artc-responsivo">
+				<!-- Arrival -->
+				<article class="h-info-chegada">
+					<h4 class="h-info-chegada__titulo"><span class="h-info-chegada__icon h-info-icons"><img src="assets/images/icon-key.svg" alt=""></span><span class="h-info-chegada__texto-titulo">Arrival</span> <span class="h-info-chegada__num-card">01</span></h4>
+					<p class="h-info-chegada__texto-sub"><b>Check-in from 15:00</b></p>
+					<p class="h-info-chegada__texto-sub-sub">Sat, 25 April</p>
+					<p class="h-info-chegada__texto">Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+				</article>
+
+				<!-- Wifi -->
+				<article class="h-info-wifi">
+					<h4 class="h-info-wifi__titulo"><span class="h-info-wifi__icon h-info-icons"><img src="assets/images/icon-wifi.svg" alt=""></span><span class="h-info-wifi__texto-titulo">Wifi</span><span class="h-info-wifi__num-card">02</span></h4>
+					<br>
+					<p class="h-info-wifi__texto-sub"><b>Le Soleil · Guest</b></p>
+					<p class="h-info-wifi__texto-sub-sub">Password below</p>
+					
+					<div class="h-info-wifi-login">
+						<h4 class="h-info-wifi-login__titulo">Network</h4>
+						<p class="h-info-wifi-login__texto">Le Soleil · Guest</p>
+					</div>
+					<div class="h-info-wifi-senha">
+						<h4 class="h-info-wifi-senha__titulo">Password</h4>
+						<p class="h-info-wifi-senha__texto">soleil-2026
+							<button type="button" class="h-info-wifi-senha__botao">Copy</button>
+						</p>
+					</div>
+				</article>
+
+				<!-- Breakfast -->
+				<article class="h-info-cafe-da-manha">
+					<h4 class="h-info-cafe-da-manha__titulo"><span class="h-info-cafe__icon h-info-icons"><img src="assets/images/icon-breakfast.svg" alt=""></span> <span class="h-info-cafe__texto-titulo">Breakfast</span><span class="h-info-wifi__num-card">03</span></h4>
+					
+					<br>
+					<p class="h-info-cafe-da-manha__texto-sub"><strong>Served 8 - 10:30</strong></p>
+					<p class="h-info-cafe-da-manha__texto-sub-sub">On the terrace</p>
+					<p class="h-info-cafe-da-manha__texto">Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+				</article>
+			</div>
+      <!-- Guest info row ends -->
+    </main>
+    <!-- Main content ends -->
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+Coded by <a href="#">Adriboy</a>.
+    </footer>
+		
+		<script>
+			const cardsContainer = document.getElementById("card_container");
+			const cardUm = document.getElementById("card01");
+			const cardDois = document.getElementById("card02");
+			const animEstadia = "card-estadia__anim";
+			const animBoasVindas = "card-boas-vindas__anim";
+			const animEstadiaDois = "card-estadia__anim02";
+			const animBoasVindasDois = "card-boas-vindas__anim02";
+			const solEntreCards = document.querySelector(".sol-hover");
+			const solAnimOn = "sol-hover-on";
+			const solAnimOff = "sol-hover-off";
+			const menu = document.getElementById("menu_cabecalho");
+			const btnMenu = document.querySelector(".container-lateral__btn-menu");
+			const btnMenuImg = document.getElementById("menu_btn_icon");
+			const containerLateral = document.querySelector(".container-lateral");
+			
+			
+			function abrirSol() {
+				// Animação de exibir o sol com transição de opacidade
+				if (solEntreCards.className.indexOf(solAnimOn) === -1) {
+          solEntreCards.classList.add(solAnimOn);
+					solEntreCards.addEventListener("animationend", () => {
+						cardUm.classList.remove(animEstadiaDois);
+						cardDois.classList.remove(animBoasVindasDois);
+					});
+					
+					if (solEntreCards.className.indexOf(solAnimOff) !== -1) {
+						solEntreCards.classList.remove(solAnimOff);
+					}
+				}		
+			  
+				// Animação para rotacionar cards
+				// Verifica se já existe alguma classe de animação no card
+				// Caso não exista adiciona a classe apropriada.
+	  		if (cardUm.className.indexOf(animEstadia) === -1) {
+					cardUm.classList.add(animEstadia);
+					
+					/* if (cardUm.className.indexOf(animEstadiaDois) > -1) {
+						cardUm.classList.remove(animEstadiaDois);
+					}	*/				
+				}
+				
+	  		if (cardDois.className.indexOf(animBoasVindas) === -1) {
+					cardDois.classList.add(animBoasVindas);
+					
+					/* if (cardDois.className.indexOf(animBoasVindasDois) > -1) {
+						cardDois.classList.remove(animBoasVindasDois);
+					}	*/				
+				}
+				
+				
+			}
+			
+			function fecharSol() {
+				// Animação de exibir o sol com transição de opacidade
+				if (solEntreCards.className.indexOf(solAnimOn) !== -1) {
+          solEntreCards.classList.remove(solAnimOn);
+          solEntreCards.classList.add(solAnimOff);
+					solEntreCards.addEventListener("animationend", () => {
+						cardUm.classList.add(animEstadiaDois);
+						cardDois.classList.add(animBoasVindasDois);
+					});
+        }				
+				
+				// Animação para rotacionar cards
+				// Verifica se já existe alguma classe de animação no card
+				// Caso não exista adiciona a classe apropriada.
+			}
+			// menu.style.left = "-500px";
+			function menuResponsivo() {
+				if (menu.className.indexOf("menu-aberto") === -1) {
+					containerLateral.classList.add("menu-on");
+					menu.classList.add("menu-aberto");
+					btnMenuImg.src = btnMenuImg.src.replace("icon-menu.svg", "icon-close.svg");
+				} else {
+					menu.classList.remove("menu-aberto");
+					setTimeout(() => containerLateral.classList.remove("menu-on"), 300);
+					btnMenuImg.src = btnMenuImg.src.replace("icon-close.svg", "icon-menu.svg");
+				}
+				
+				// Animações opacidade
+				menu.classList.toggle("menu-aberto-op", menu.className.indexOf("menu-aberto-op") === -1);
+				menu.classList.toggle("menu-fechado-op", menu.className.indexOf("menu-aberto-op") > -1);
+			}
+			
+			cardUm.addEventListener("mouseenter", abrirSol, false);
+			cardDois.addEventListener("mouseenter", abrirSol, false);
+			solEntreCards.addEventListener("mouseenter", abrirSol, false);
+			
+			cardUm.addEventListener("mouseleave", fecharSol, false);
+			cardDois.addEventListener("mouseleave", fecharSol, false);
+			solEntreCards.addEventListener("mouseleave", fecharSol, false);
+			
+			btnMenu.addEventListener("click", menuResponsivo, false);
+		</script>
+  </body>
+</html>

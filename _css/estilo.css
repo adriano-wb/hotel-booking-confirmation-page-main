@@ -1,0 +1,680 @@
+:root {
+	/* Neutral */
+	--neutral-900: hsl(33, 15%, 15%);
+	--neutral-800: hsl(33, 22%, 20%);
+	--neutral-700: hsl(32, 20%, 29%);
+	--neutral-600: hsl(33, 17%, 41%);
+	--neutral-400: hsl(36, 22%, 86%);
+	--neutral-200: hsl(30, 24%, 93%);
+	--neutral-100: hsl(35, 60%, 96%);
+	--neutral-50: hsl(40, 60%, 98%);
+	--neutral-0: hsl(0, 0%, 100%);
+	
+	/* Sun */
+  --sun-500: hsl(42, 83%, 58%);
+  --sun-300: hsl(44, 84%, 75%);
+  --sun-200: hsl(45, 100%, 74%);
+  --sun-50: hsl(41, 100%, 93%);
+	
+	/* Terracotta */
+  --terracotta-700: hsl(15, 69%, 37%);
+  --terracotta-600: hsl(15, 74%, 41%);
+  --terracotta-500: hsl(18, 62%, 47%);
+  --terracotta-400: hsl(22, 72%, 56%);
+	
+	/* Blue */
+  --blue-500: hsl(230, 49%, 56%);
+	
+	/* Rose */
+	--rose-500: hsl(340, 48%, 52%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  font-family: "Fraunces", serif;
+}
+
+body {background: var(--neutral-100)}
+p {font-size: 14px}
+
+hr {
+	background: var(--neutral-400);
+	border: none;
+	height: 1px;
+}
+
+main {padding: 3px 16px}
+.br-not-mobile {display:none}
+
+/* Conteúdo lateral (aside) */
+.container-lateral {
+	background: var(--neutral-100);
+	width: 100%;
+	padding: 0 16px;
+	position: absolute;
+	top: 0;
+}
+
+.container-lateral__inicio {
+	display: flex;
+	gap: 6.5px;
+	padding: 16px 15px 13px 0;
+}
+
+.inicio-titulo__nome {
+	color: var(--neutral-700);
+	font: 600 20px Fraunces, serif;
+	margin-top: -2px;
+}
+
+.nome__destaque {
+	color: var(--terracotta-700);
+	display: block;
+	font: 600 italic 20px Fraunces-italico, serif;
+	margin-bottom: -2px;
+}
+
+.inicio-titulo__img {
+	width: 37px;
+	height: 37px;
+	margin-top: 3px;
+	order: -1;
+}
+
+/* Botão de menu responsivo */
+.container-lateral__btn-menu {
+	background: transparent;
+	border-radius: 4px;
+	outline: none;
+	border: 1px solid var(--neutral-400);
+	padding: 4px 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 21px 15px;
+	z-index: 10000;
+}
+
+/* Comportamento do container lateral quando o menu estiver aberto */
+.container-lateral.menu-on {
+	position: fixed;
+	top: 0;
+	z-index: 5000;
+	height: 100%;
+	
+}
+
+/* Cabeçalho com o menu e outras informações */
+.menu-cabecalho {
+	display: block;
+	position: relative;
+	/* left: -500px; */
+	left: -133.33vw;
+	position: absolute;
+	top: 0;
+	padding-top: 73px;
+	height: 100%;
+	width: 100%;
+	transition: 0.4s;
+}
+
+/* O menu lateral estará escondido em dispositivos mobile para serem exibidos quando o usuário disparar o evento */
+.menu-cabecalho.menu-aberto {left: 0}
+
+/* MENU PRINCIPAL */
+.menu {margin-top: 16px}
+
+.menu__link {
+	display: flex;
+	align-items: center;
+	border-radius: 13px;
+	padding: 11px 13px;
+	font-size: 14px;
+	margin-left: 16px;
+	margin-right: 16px;
+	gap: 7px;
+	text-decoration: none;
+	color: var(--neutral-800);
+	transition: 0.4s;
+}
+
+.menu__link:hover,
+.menu__link--ativo {
+	background-color: var(--neutral-0);
+}
+
+.menu__link span {
+	font-family: DM-Sans, sans-serif;
+}
+
+.notificacao {
+	display: block;
+	color: var(--neutral-0);
+	padding: 2px 5px;
+	margin-left: auto;
+	background: var(--terracotta-600);
+	font-size: 10px;
+	border-radius: 50%;
+}
+
+/* Inicio das animações de opacidade ao abrir ou fechar o menu */
+@keyframes opacitMenu {
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
+.menu-aberto-op {
+	animation: opacitMenu linear .2s forwards;
+}
+
+.menu-fechado-op {
+	animation: opacitMenu linear .2s reverse backwards;
+}
+/* Fim das animações do menu principal */
+
+/* Rodapé do aside */
+.rodape-lateral {
+	position: absolute;
+	bottom: 15px;
+	right: 16px;
+	left: 16px;
+}
+
+.cartao-clima {
+	background: var(--sun-300) url("../assets/images/icon-weather.svg") 164px -30px no-repeat;
+	border-radius: 18px;
+	padding: 12px 17px;
+}
+
+.cartao-clima__titulo {
+	color: var(--neutral-700);
+	font: lighter 0.71rem DM-Mono-regular, monospace;
+	text-transform: uppercase;
+}
+
+.cartao-clima__temperatura-ambiente {
+	font-size: 2.2rem;
+}
+
+.rodape-lateral__texto {
+	color: var(--neutral-700);
+	font: 0.74rem DM-Mono-regular, monospace;
+	margin-top: 8px;
+	text-transform: uppercase;
+}
+
+.cartao-clima__descricao {
+	color: var(--neutral-700);
+	font: 0.8rem DM-Sans, sans-serif;
+}
+/* Fim do rodapé e fim do aside */
+
+
+/* Lista de páginas (breadcrumb) */
+.lista-paginas {
+	margin: 89px 16px 18px;
+}
+
+.lista-paginas__item {
+	color: var(--neutral-600);
+	float: left;
+  font: 12px "DM-Mono-regular", monospace;
+	list-style: none;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.lista-paginas__item:not(:first-child)::before {
+	content: " · ";
+	margin-left: 8px;
+}
+/* Fim da lista de páginas (breadcrumb) */
+
+/* Cabeçalho contendo nome da cliente */
+.cabecalho-principal {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1px;
+}
+
+.cabecalho-principal__titulo {
+	color: var(--neutral-800);
+	font: 600 2.33rem Fraunces, serif;
+}
+
+mark {
+	background: transparent;
+	color: var(--terracotta-700);
+	font: italic 2.45rem Fraunces-italico, serif;
+}
+
+.btn-group {
+	display: flex;
+	gap: 15px;
+	margin-top: 21px;
+}
+
+.btn-group__btn {
+	background: transparent;
+	border: 1px solid var(--neutral-400);
+	border-radius: 21px;
+	color: var(--neutral-800);
+	cursor: pointer;
+	display: block;
+  font: 600 14px "DM-Sans", sans-serif;
+	padding: 8px 17px;
+	width: 100%;
+}
+
+.btn-group__btn:last-child {
+	background: var(--neutral-800);
+	border: none;
+	color: var(--neutral-100);
+}
+/* Fim do cabeçalho */
+
+
+/* Seção dos cartões */
+.card-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-group__item:last-child {
+	order: -1;
+}
+
+/* Cartão laranja (boas-vindas) */
+.boas-vindas {
+  background: linear-gradient(26deg, var(--terracotta-600) 0%, var(--terracotta-400) 100%);
+	border-radius: 20px;
+	box-shadow: 1px 14px 40px hsl(15, 49%, 60%);
+	margin: 55px 10px 0;
+	padding: 8px 21px 25px;
+	position: relative;
+	transform: rotate(1.9deg);
+	z-index: 1000;
+	height: clamp(440px, 430px + 0.15vw, 500px);
+}
+
+.boas-vindas__sol-img {
+	position: absolute;
+	right: 21px;
+	top: 39px;
+}
+
+.boas-vindas__titulo {
+	color: var(--neutral-50);
+	text-transform: uppercase;
+	font: 400 clamp(0.63rem, 0.55rem + 0.25vw, 0.85rem) DM-Sans, Sans-Serif;
+	margin-top: 12px;
+	word-spacing: 5px;
+}
+
+.boas-vindas__saudacao,
+.boas-vindas__nome {
+	font-style: italic;
+}
+
+.boas-vindas__saudacao {
+	font: italic clamp(1.34rem, 1.2rem + 0.5vw, 1.8rem) Fraunces-italico, Serif;
+	color: var(--sun-200);
+	margin-top: 56px;
+}
+
+.boas-vindas__nome {
+	font: italic clamp(2.65rem, 2.2rem + 1vw, 3.5rem) Fraunces-italico, Serif;
+	color: var(--neutral-50);
+	margin-top: 4px;
+}
+
+.boas-vindas__texto {
+	color: var(--neutral-50);
+	font: clamp(0.875rem, 0.8rem + 0.2vw, 1rem) DM-Sans, Sans-Serif;
+	margin-top: 26px;
+	line-height: 1.4;
+}
+
+.boas-vindas__rodape {
+	margin-top: 75px;
+	color: var(--neutral-50);
+	/* padding-bottom: 40px; */
+}
+
+.rodape__comodo {
+	font-size: clamp(0.72rem, 0.68rem + 0.15vw, 0.85rem);
+	position: absolute;
+	bottom: 25px;
+	left: 21px;
+}
+
+.rodape__hotel-nome {
+	display: block;
+	margin-top: 8px;
+	font-size: clamp(1.25rem, 1.1rem + 0.4vw, 1.6rem);
+}
+/* Fim do cartão de boas-vindas */
+
+/* Cartão para com o recibo */
+.cartao-estadia {
+	background-color: var(--neutral-50);
+	border-radius: 20px;
+	box-shadow: 1px 14px 40px hsl(32, 20%, 89%);
+	margin: 0 9px 0 7px;
+	padding: 11px 23px;
+	padding-bottom: 25px;
+	transform: rotate(-1.9deg);
+	height: clamp(440px, 430px + 0.15vw, 500px);
+}
+
+.recibo__titulo {
+	color: var(--neutral-600);
+	text-transform: uppercase;
+	font: clamp(0.78rem, 0.74rem + 0.15vw, 1.22rem) DS-Mono-regular, monospace;
+	margin-top: 22px;
+}
+
+.titulo__num {
+	display: inline-block;
+	font-family: DS-Mono-regular, monospace;
+	float: right;
+	text-align: right;
+}
+
+.recibo__subtitulo {
+	font: 600 clamp(1.22rem, 1.48rem + 0.15vw, 2.85rem) Fraunces, serif;
+	margin-top: 6px;
+}
+
+.datas-entrada-saida {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px -5px 20px -2px;
+}
+
+.info-check__titulo {
+	color: var(--neutral-600);
+	font: clamp(0.72rem, 0.58rem + 0.15vw, 1.15rem) DM-Mono-regular, monospace;
+	text-transform: uppercase;
+	text-align: center;
+	margin-left: -1px;
+}
+
+.info-check__dias {
+	display: block;
+	font: clamp(1.8rem, 1.3rem + 0.85vw, 3.85rem) Fraunces, serif;
+	margin-top: 9px;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+.info-check__semana-hora {
+	color: var(--neutral-600);
+	font-family: DM-Sans, sans-serif;
+}
+
+.servicos {
+	list-style: none;
+	margin-left: 1px;
+}
+
+.servicos__items {
+	color: var(--neutral-700);
+	display: block;
+	font: clamp(0.9rem, 0.6rem + 0.15vw, 1.55rem) DM-Sans, Sans-serif;
+	margin-bottom: 10px;
+}
+
+.servicos__items, .items__valor  {
+	word-spacing: -1px;
+}
+
+.items__valor {
+	float: right;
+	font: clamp(0.75rem, 0.73rem + 0.15vw, 1.15rem) DM-Mono-regular, monospace;
+}
+.servicos--valor {
+	color: var(--neutral-600);
+}
+
+.cod-barras {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 28px;
+	width: 100%;
+}
+
+.total {
+	font-size: clamp(0.9rem, 0.6rem + 0.15vw, 1.35rem);
+	letter-spacing: 1.28px;
+}
+
+.total, .cod-barras__metodos {
+	text-transform: uppercase;
+	font-family: DS-Mono-media, monospace;
+}
+
+.total__valor-total {
+	float: right;
+	font-size: clamp(1.32rem, 1.30rem + 0.15vw, 2.15rem);
+	margin-top: -5px;
+	font-family: Fraunces, serif;
+	font-weight: 400;
+}
+
+.cod-barras__metodos {
+	font-size: clamp(0.8rem, 0.77rem + 0.15vw, 1.15rem);
+}
+/* Fim do cartão de estadia */
+
+.hover-to-fan {
+	display:none;
+	color: var(--neutral-600);
+	font-family: DS-Mono, monospace, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* INFORMAÇÕES DO QUARTO ALUGADO */
+.h-info-chegada {
+	background-color: var(--neutral-0);
+	margin-bottom: 16px;
+}
+
+.h-info-chegada__num-card,
+.h-info-wifi__num-card {
+	float: right;
+}
+
+.artc-responsivo {
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+}
+
+.artc-responsivo > [class^="h-info"] {
+	border: 1px solid var(--neutral-400);
+	border-radius: 18px;
+	padding: 21px 15px;
+	padding-bottom: 19px;
+}
+
+.h-info-chegada__titulo {
+	color: var(--terracotta-700);
+}
+
+[class*="h-info"] > [class$="titulo"] {
+	font-family: DM-Mono-regular, serif;
+	text-transform: uppercase;
+	letter-spacing: 1.9px;
+}
+
+[class*="h-info"] > [class$="num-card"] {
+	transform: translate(2px, 5px);
+	font-size: 1.39rem;
+	font-weight: 400;
+}
+
+[class*="h-info"] > [class$="texto-titulo"]:not(.h-info-cafe__texto-titulo) {
+	display: inline-block;
+	transform: translate(clamp(8px, 6px + 0.15vw, 11px), clamp(-6px, -8px - 0.15vw, -12px));
+	font-size: clamp(.92rem, .80rem + 0.05vw, 1.2rem);
+}
+
+[class*="h-info"] > [class$="texto-sub"] {
+	color: var(--neutral-700);
+	font-size: clamp(1.47rem, 1.43rem + 0.5vw, 1.68rem);
+	font-weight: 300;
+}
+
+[class*="h-info"] > [class$="texto-sub-sub"] {
+	color: var(--neutral-600);
+	font: clamp(0.8rem, 0.77rem + 0.5vw, 0.98rem) DM-Sans, Sans-serif;
+	margin-top: 8px;
+}
+
+.h-info-chegada__texto-sub {
+	margin-top: 23px;
+}
+
+.h-info-wifi__texto-sub {
+	margin-top: 2px;
+}
+
+.h-info-icons {
+	border-radius: 8px;
+	display: inline-block;
+	padding: 5px 8px;
+}
+
+.h-info-chegada__icon {
+	background-color: var(--terracotta-600);
+}
+
+.h-info-chegada__texto {
+	color: var(--neutral-600);
+	font: clamp(14px, 12px + 0.5vw, 17px) DM-Sans, Sans-serif;
+	margin-top: 15px;
+	line-height: clamp(20px, 18px + 0.5vw, 24px);
+}
+
+.h-info-wifi {
+	background-color: var(--neutral-0);
+	margin-bottom: 17px;
+}
+
+.h-info-wifi__titulo {
+	color: var(--blue-500);
+}
+
+.h-info-wifi__icon {
+	background-color: var(--blue-500);
+}
+
+.h-info-wifi__icon img {
+	margin-top: 2px;
+}
+
+.h-info-wifi-login {
+	margin-top: 15px;
+}
+
+.h-info-wifi-login,
+.h-info-wifi-senha {
+	border-radius: 8px;
+	padding: 8px 10px;
+}
+
+.h-info-wifi-login__titulo,
+.h-info-wifi-senha__titulo {
+	color: var(--neutral-600);
+	font-size: clamp(0.75rem, 0.2rem + 0.5vw, 1.13rem);
+	font-weight: lighter;
+}
+
+.h-info-wifi-login__texto,
+.h-info-wifi-senha__texto {
+	color: var(--neutral-700);
+	font: clamp(0.81rem, 0.75rem + 0.5vw, 0.83rem) DM-Sans, sans-serif;
+}
+
+.h-info-wifi-login,
+.h-info-wifi-senha {
+	background-color: var(--neutral-200);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.h-info-wifi-senha {
+	margin-top: 3px;
+	margin-bottom: -3px;
+}
+
+.h-info-wifi-senha__botao {
+	background-color: transparent;
+	border: 1px solid var(--neutral-400);
+	cursor: pointer;
+	transition: 0.4s;
+	border-radius: 13px;
+	display: inline-block;
+	margin-left: 2px;
+	color: var(--neutral-600);
+	font-family: DS-Sans, sans-serif;
+	padding: 5px;
+	text-transform: uppercase;
+	font-size: 0.65rem;
+}
+.h-info-wifi-senha__botao:hover {
+	background-color: var(--neutral-0);
+}
+
+.h-info-cafe-da-manha {
+	background-color: var(--neutral-0);
+	margin-bottom: 50px;
+}
+
+.h-info-cafe-da-manha__titulo {
+	color: var(--rose-500);
+}
+
+.h-info-cafe__icon {
+	background-color: var(--rose-500);
+}
+
+.h-info-cafe__texto-titulo {
+	display: inline-block;
+	transform: translate(-2px, -6px);
+}
+
+.h-info-cafe-da-manha__texto-sub {
+	margin-top: 4px;
+}
+
+.h-info-cafe-da-manha__texto {
+	color: var(--neutral-600);
+	font: clamp(14px, 12px + 0.5vw, 17px) DM-Sans, Sans-serif;
+	margin-top: 14px;
+	line-height: clamp(20px, 18px + 0.5vw, 24px);
+}
+/* FIM DAS INFORMAÇÕES DO QUARTO */
+
+/* Efeitos e animações */
+.sol-hover {
+	display: none;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+/* rodape */
+.attribution {
+	font-family: DS-Sans, sans-serif;
+	padding: 5px;
+}
+
+.attribution a {
+	color: var(--terracotta-700);
+}

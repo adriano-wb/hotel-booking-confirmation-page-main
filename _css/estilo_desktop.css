@@ -1,0 +1,261 @@
+
+body {
+	/* background: url(../design/desktop-design.jpg) 0 0 / cover no-repeat; */
+}
+
+.br-not-mobile {display:block}
+
+.container-lateral__btn-menu {display:none}
+
+.menu-cabecalho {display:block}
+
+.container-lateral {
+	border-right: 1px solid var(--neutral-400);
+	float: left;
+	position: fixed;
+	top: 0;
+	z-index: 5000;
+	height: 100%;
+	width: clamp(260px, 257px + 0.15vw, 300px);
+}
+
+.menu-cabecalho {
+	left: 0;
+}
+
+.rodape-lateral {
+	margin-right: 15px;
+}
+
+.container-lateral__inicio {
+	padding-left: 0;
+}
+
+.inicio-titulo__nome { 
+  margin-top: 3px;
+}
+
+.inicio-titulo__img { 
+	margin-top: 6px;
+}
+
+main {
+	margin-left: 285px;
+	margin-right: 23px;
+}
+
+.cabecalho-principal {
+	align-items: center;
+	flex-direction: row;
+}
+
+.btn-group {
+	margin-top: -16px;
+	margin-left: auto;
+	gap: 19x;
+}
+
+.btn-group__btn {
+	padding: 8px 15px;
+	width: inherit;
+	font-size: 15px;
+	width: auto;
+	transition: 0.4s;
+}
+
+.btn-group__btn:nth-child(1) {
+	flex-grow: 7;
+}
+
+.btn-group__btn:nth-child(1):hover {
+	background: var(--neutral-50);
+	flex-grow: 7;
+}
+
+.btn-group__btn:nth-child(2) {
+	flex-grow: 8;
+}
+
+.menu__link {
+	border-radius: 13px;
+	padding: 11px 13px;
+	margin: 0 16px;
+	font-size: 14px;
+	gap: 9px;
+}
+
+.notificacao {
+	transform: translateX(-5px);
+}
+
+.lista-paginas {
+	margin-top: 30px;
+	margin-left: 300px;
+}
+
+.card-group {
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 55px;
+}
+
+.card-group__item:last-child {
+	order: 1;
+}
+
+.boas-vindas {
+	margin-top: 0;
+	transform: rotate(4deg);
+	margin-left: -3px;
+	margin-top: 10px;
+	width: clamp(441.53px, 438px + 0.15vw, 500px);
+	height: 500px;
+}
+
+.artc-responsivo {
+	flex-direction: row;
+	gap: 24px;
+}
+
+.h-info-chegada, .h-info-wifi, .h-info-cafe-da-manha {
+	flex-basis: 35%;
+	margin-bottom: 0;
+}
+
+.cartao-estadia {
+	transform: rotate(-4deg);
+	width: clamp(421.53px, 418px + 0.15vw, 500px);
+	height: 500px;
+}
+
+.info-check {
+	margin: 22px;
+}
+
+.hover-to-fan {
+	display: block;
+}
+
+.attribution {
+	margin-top: 45px;
+}
+
+.artc-responsivo > [class^="h-info"] {
+	padding: 29px 21px;
+}
+
+.h-info-wifi-senha {
+	margin-top: 5px;
+}
+
+/* Efeitos e animações */
+.sol-hover {
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+
+.sol-hover-on {
+	animation: solOpacidadeOn linear .4s forwards;
+}
+
+.sol-hover-off {
+	animation: solOpacidadeOff linear .4s forwards;
+}
+
+@keyframes solOpacidadeOn {
+	0% {
+		opacity: 0;
+		transform: rotate(0);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes solOpacidadeOff {
+	0% {
+		opacity: 1;
+		transform: rotate(360deg);
+	}
+	100% {
+		opacity: 0;
+		transform: rotate(0);
+	}
+}
+
+.cartao-estadia {
+	margin-top: 10px;
+}
+
+.card-estadia__anim {
+	animation: rotateCardHorario linear 0.4s forwards;
+	position: relative;
+}
+
+.card-estadia__anim02 {
+	animation: rotateCardHorario2 linear 0.4s forwards;
+	position: relative;
+}
+
+.card-boas-vindas__anim {
+	animation: rotateCardAntihorario linear 0.4s forwards;
+	position: relative;
+}
+
+.card-boas-vindas__anim02 {
+	animation: rotateCardAntihorario2 linear 0.4s forwards;
+	position: relative;
+}
+
+@keyframes rotateCardHorario {
+	from {
+		transform: rotate(-4deg);
+		right: 0;
+	}
+	
+	to {
+		transform: rotate(4deg);
+		right: clamp(100px, 97px + 0.15vw, 200px);
+	}
+}
+
+@keyframes rotateCardHorario2 {
+	from {
+		transform: rotate(4deg);
+		right: clamp(100px, 97px + 0.15vw, 200px);
+	}
+	
+	to {
+		transform: rotate(-4deg);
+		right: 0;
+	}
+}
+
+@keyframes rotateCardAntihorario {
+	from {
+		transform: rotate(4deg);
+		right: 0;
+	}
+	
+	to {
+		transform: rotate(-4deg);
+		right: clamp(-120px, -117px + 0.15vw, -90px);
+	}
+}
+
+@keyframes rotateCardAntihorario2 {
+	from {
+		transform: rotate(-4deg);
+		right: clamp(-120px, -117px + 0.15vw, -90px);
+	}
+	
+	to {
+		transform: rotate(4deg);
+		right: 0;
+	}
+}

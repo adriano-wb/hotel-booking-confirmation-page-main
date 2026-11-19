@@ -1,0 +1,27 @@
+/* Fonts DM-Mono */
+@font-face {
+  font-family: DM-Mono-regular;
+  src: url(../assets/fonts/dm-mono/DMMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: DM-Mono-media;
+  src: url(../assets/fonts/dm-mono/DMMono-Medium.ttf);
+}
+
+/* Fonts DM-Sans */
+@font-face {
+  font-family: DM-Sans;
+  src: url(../assets/fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf);
+}
+
+/* Fonts Fraunces */
+@font-face {
+  font-family: Fraunces;
+  src: url(../assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf);
+}
+
+@font-face {
+  font-family: Fraunces-talico;
+  src: url(../assets/fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf);
+}
